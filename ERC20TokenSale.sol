@@ -22,8 +22,7 @@ contract TokenSale is ERC20Capped, Ownable {
         require(totalSupply < 1000000 * 10**18);
 
         // Get tokens per wei passed in
-        uint256 amount = 1000 * msg.value; 
-
+        uint256 amount = msg.value.mul(1000); 
         _mint(msg.sender, amount);
     }
 
