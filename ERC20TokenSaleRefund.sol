@@ -32,16 +32,16 @@ contract TokenSaleRefund is ERC20Capped, Ownable {
     }
 
     
-    function sellBack(uint256 tokens, address from) external payable {
+    function sellBack(uint256 tokens) external payable {
         // calculate amount of wei to give to sender
         // revert if contract doesnt have enough funds
         // check if user has enough tokens to send
-        require(balanceOf(from) >= 1);
+        require(balanceOf(msg.sender) >= 1);
         uint256 amount = (rate * (tokens / 10**18));
         require(address(this).balance >= amount);
 
         transfer(address(this), tokens);
-        payable(from).transfer(amount); // send appropriate eth amt
+        payable(msg.sender).transfer(amount); // send appropriate eth amt
     }
 
     function withdraw() external payable onlyOwner {
