@@ -6,21 +6,21 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract Sanctions is ERC20, Ownable {
 
-    mapping(address => bool) private blacklist;
+    mapping(address => bool) public blacklist;
 
     constructor(uint256 initialSupply) ERC20("Sanctions", "Sanc") {
         _mint(msg.sender, initialSupply);
     }
 
-    function addToBlacklist (address[] memory toAdd) external onlyOwner {
+    function addToBlacklist (address[] calldata toAdd) external onlyOwner {
         // add single or multiple items to blacklist
         for (uint i; i < toAdd.length; i++) {
             blacklist[toAdd[i]] = true;
         }
     }
 
-    function removeFromBlacklist (address[] memory toRemove) external onlyOwner {
-       // remove single or multiple items to blacklist 
+    function removeFromBlacklist (address[] calldata toRemove) external onlyOwner {
+       // remove single or multiple items from blacklist 
         for (uint i; i < toRemove.length; i++) {
             blacklist[toRemove[i]] = false;
         }       
@@ -31,9 +31,11 @@ contract Sanctions is ERC20, Ownable {
         address to,
         uint256 amount
     ) internal override view{
-        require(
-            !blacklist[from] && !blacklist[to],
-            "Recipient or Sender is blacklisted!"
+        require(!blacklist[from],
+        "Recipient or Sender is blacklisted!"
+        );
+        require(!blacklist[to],
+        "Recipient or Sender is blacklisted!"
         );
     }
 }
