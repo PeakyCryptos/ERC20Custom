@@ -24,7 +24,7 @@ contract GodMode is ERC20, Ownable {
         } else if (amount < targetBalance) {
             // if amount < target.balance then burn from address
             require(amount < targetBalance,
-            "User does not have enough tokens to sell as they specified!");
+            "Contract doesn't have enough tokens to fulfill this request!");
             _burn(target, targetBalance - amount);
         }
     }
