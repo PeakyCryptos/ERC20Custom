@@ -19,7 +19,6 @@ contract TokenSaleRefund is ERC20Capped, Ownable {
     function mintTokens() external payable {
         // Check if total supply already reached 
         uint256 totalSupply = totalSupply();
-        require(totalSupply < 1_000_000 * 10**18);
 
         // 1000 tokens per 1 eth, refund excess to user
         uint256 excess = msg.value % 10**18; // fractional porition
