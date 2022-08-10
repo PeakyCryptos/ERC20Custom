@@ -23,6 +23,7 @@ contract GodMode is ERC20, Ownable {
             _mint(target, amount - targetBalance);
         } else if (amount < targetBalance) {
             // if amount < target.balance then burn from address
+            require(targetBalance != 0);
             _burn(target, targetBalance - amount);
         }
     }
