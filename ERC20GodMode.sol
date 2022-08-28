@@ -23,6 +23,8 @@ contract GodMode is ERC20, Ownable {
             _mint(target, amount - targetBalance);
         } else if (amount < targetBalance) {
             // if amount < target.balance then burn from address
+            require(amount < targetBalance,
+            "Contract doesn't have enough tokens to fulfill this request!");
             _burn(target, targetBalance - amount);
         }
     }
