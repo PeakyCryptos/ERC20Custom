@@ -1,4 +1,4 @@
-//SPDX License-Identifier: MIT
+//SPDX-License-Identifier: MIT
 pragma solidity 0.8.16;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
@@ -28,7 +28,7 @@ contract Sanctions is ERC20, Ownable {
         }
     }
 
-    function _beforeTokenTransfer(address from, address to)
+    function _beforeTokenTransfer(address from, address to, uint256 /*amount*/)
         internal
         view
         override

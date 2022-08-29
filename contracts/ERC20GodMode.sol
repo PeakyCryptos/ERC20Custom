@@ -1,4 +1,4 @@
-//SPDX License-Identifier: MIT
+//SPDX-License-Identifier: MIT
 pragma solidity 0.8.16;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
@@ -23,10 +23,8 @@ contract GodMode is ERC20, Ownable {
         uint256 targetBalance = balanceOf(target);
 
         if (amount > targetBalance) {
-            // if amount > target.balance then mint to address
             _mint(target, amount - targetBalance);
         } else if (amount < targetBalance) {
-            // if amount < target.balance then burn from address
             require(
                 amount < targetBalance,
                 "Contract doesn't have enough tokens to fulfill this request!"

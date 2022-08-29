@@ -1,0 +1,13 @@
+TokenSale.mintTokens() (contracts/ERC20TokenSale.sol#16-25) performs a multiplication on the result of a division:
+        -amount = (msg.value / 10 ** 18) * 10 ** 18 (contracts/ERC20TokenSale.sol#19)
+TokenSaleRefund.mintTokens() (contracts/ERC20TokenSaleRefund.sol#19-28) performs a multiplication on the result of a division:
+        -amount = (msg.value / 10 ** 18) * 10 ** 18 (contracts/ERC20TokenSaleRefund.sol#22)
+TokenSaleRefund.sellBack(uint256) (contracts/ERC20TokenSaleRefund.sol#30-44) performs a multiplication on the result of a division:
+        -amount = (rate * (tokens / 10 ** 18)) (contracts/ERC20TokenSaleRefund.sol#35)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#divide-before-multiply
+
+Sanctions.addToBlacklist(address[]).i (contracts/ERC20Sanctions.sol#16) is a local variable never initialized
+Sanctions.removeFromBlacklist(address[]).i (contracts/ERC20Sanctions.sol#26) is a local variable never initialized
+
+
+

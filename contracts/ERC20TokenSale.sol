@@ -1,9 +1,9 @@
-//SPDX License-Identifier: MIT
+//SPDX-License-Identifier: MIT
 pragma solidity 0.8.16;
 
-import "../node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC20Capped.sol";
-import "../node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Capped.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract TokenSale is ERC20Capped, Ownable {
     constructor(uint256 initialSupply)
