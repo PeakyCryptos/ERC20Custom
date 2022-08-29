@@ -28,11 +28,11 @@ contract Sanctions is ERC20, Ownable {
         }
     }
 
-    function _beforeTokenTransfer(
-        address from,
-        address to,
-        uint256 amount
-    ) internal view override {
+    function _beforeTokenTransfer(address from, address to)
+        internal
+        view
+        override
+    {
         require(!blacklist[from], "Recipient or Sender is blacklisted!");
         require(!blacklist[to], "Recipient or Sender is blacklisted!");
     }
