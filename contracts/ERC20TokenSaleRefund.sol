@@ -6,14 +6,13 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract TokenSaleRefund is ERC20Capped, Ownable {
-    uint256 private rate;
+    uint256 public rate;
 
-    constructor(uint256 initialSupply)
+    constructor()
         ERC20("TokenSale", "TS")
         ERC20Capped(1_000_000 * 10**18) // All mints capped to 1 mil tokens
     {
-        _mint(msg.sender, initialSupply);
-        rate = 500_000_000_000_000; // (0.5 / 1000) / 10^18 wei per token
+        rate = 0.0005 ether; // (0.5 / 1000) / 10^18 wei per token
     }
 
     function mintTokens() external payable {
@@ -32,7 +31,7 @@ contract TokenSaleRefund is ERC20Capped, Ownable {
         require(balanceOf(msg.sender) >= 1, "You do not have any tokens to send!");
 
         // calculate amount of wei to give to sender
-        uint256 amount = (rate * (tokens / 10**18));
+        uint256 amount = (rate * tokens );
 
         // revert if contract doesnt have enough funds
         require(address(this).balance >= amount, "Contract doesn't have enough Ether!");

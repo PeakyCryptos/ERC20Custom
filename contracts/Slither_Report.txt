@@ -8,6 +8,51 @@ Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#divide-
 
 Sanctions.addToBlacklist(address[]).i (contracts/ERC20Sanctions.sol#16) is a local variable never initialized
 Sanctions.removeFromBlacklist(address[]).i (contracts/ERC20Sanctions.sol#26) is a local variable never initialized
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#uninitialized-local-variables
 
+Different versions of Solidity are used:
+        - Version used: ['0.8.16', '^0.8.0']
+        - ^0.8.0 (node_modules/@openzeppelin/contracts/access/Ownable.sol#4)
+        - ^0.8.0 (node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol#4)
+        - ^0.8.0 (node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol#4)
+        - ^0.8.0 (node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC20Capped.sol#4)
+        - ^0.8.0 (node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol#4)
+        - ^0.8.0 (node_modules/@openzeppelin/contracts/utils/Context.sol#4)
+        - 0.8.16 (contracts/ERC20GodMode.sol#2)
+        - 0.8.16 (contracts/ERC20Sanctions.sol#2)
+        - 0.8.16 (contracts/ERC20TokenSale.sol#2)
+        - 0.8.16 (contracts/ERC20TokenSaleRefund.sol#2)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#different-pragma-directives-are-used
 
+Pragma version^0.8.0 (node_modules/@openzeppelin/contracts/access/Ownable.sol#4) allows old versions
+Pragma version^0.8.0 (node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol#4) allows old versions
+Pragma version^0.8.0 (node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol#4) allows old versions
+Pragma version^0.8.0 (node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC20Capped.sol#4) allows old versions
+Pragma version^0.8.0 (node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol#4) allows old versions
+Pragma version^0.8.0 (node_modules/@openzeppelin/contracts/utils/Context.sol#4) allows old versions
+Pragma version0.8.16 (contracts/ERC20GodMode.sol#2) necessitates a version too recent to be trusted. Consider deploying with 0.6.12/0.7.6/0.8.7
+Pragma version0.8.16 (contracts/ERC20Sanctions.sol#2) necessitates a version too recent to be trusted. Consider deploying with 0.6.12/0.7.6/0.8.7
+Pragma version0.8.16 (contracts/ERC20TokenSale.sol#2) necessitates a version too recent to be trusted. Consider deploying with 0.6.12/0.7.6/0.8.7
+Pragma version0.8.16 (contracts/ERC20TokenSaleRefund.sol#2) necessitates a version too recent to be trusted. Consider deploying with 0.6.12/0.7.6/0.8.7
+solc-0.8.16 is not recommended for deployment
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
 
+renounceOwnership() should be declared external:
+        - Ownable.renounceOwnership() (node_modules/@openzeppelin/contracts/access/Ownable.sol#61-63)
+transferOwnership(address) should be declared external:
+        - Ownable.transferOwnership(address) (node_modules/@openzeppelin/contracts/access/Ownable.sol#69-72)
+name() should be declared external:
+        - ERC20.name() (node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol#62-64)
+symbol() should be declared external:
+        - ERC20.symbol() (node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol#70-72)
+decimals() should be declared external:
+        - ERC20.decimals() (node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol#87-89)
+approve(address,uint256) should be declared external:
+        - ERC20.approve(address,uint256) (node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol#136-140)
+transferFrom(address,address,uint256) should be declared external:
+        - ERC20.transferFrom(address,address,uint256) (node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol#158-167)
+increaseAllowance(address,uint256) should be declared external:
+        - ERC20.increaseAllowance(address,uint256) (node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol#181-185)
+decreaseAllowance(address,uint256) should be declared external:
+        - ERC20.decreaseAllowance(address,uint256) (node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol#201-210)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#public-function-that-could-be-declared-external
