@@ -1,0 +1,388 @@
+Mutation testing report:
+Number of mutations:    47
+Killed:                 7 / 47
+
+Mutations:
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 24
+    Result: Lived
+    Original line:
+                 if (amount > targetBalance) {
+
+    Mutated line:
+                 if (amount >= targetBalance) {
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 26
+    Result: Lived
+    Original line:
+                 } else if (amount < targetBalance) {
+
+    Mutated line:
+                 } else if (amount <= targetBalance) {
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 28
+    Result: Lived
+    Original line:
+                         amount < targetBalance,
+
+    Mutated line:
+                         amount <= targetBalance,
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 24
+    Result: Lived
+    Original line:
+                 if (amount > targetBalance) {
+
+    Mutated line:
+                 if (amount <= targetBalance) {
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 26
+    Result: Lived
+    Original line:
+                 } else if (amount < targetBalance) {
+
+    Mutated line:
+                 } else if (amount >= targetBalance) {
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 28
+    Result: Lived
+    Original line:
+                         amount < targetBalance,
+
+    Mutated line:
+                         amount >= targetBalance,
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 31
+    Result: Lived
+    Original line:
+                     _burn(target, targetBalance - amount);
+
+    Mutated line:
+                     _burn(target, targetBalance + amount);
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 25
+    Result: Lived
+    Original line:
+                     _mint(target, amount - targetBalance);
+
+    Mutated line:
+                     _mint(target, amount + targetBalance);
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 8
+    Result: Lived
+    Original line:
+                 _mint(msg.sender, initialSupply);
+
+    Mutated line:
+                 
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 15
+    Result: Lived
+    Original line:
+                 _mint(recipient, amount);
+
+    Mutated line:
+                 
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 31
+    Result: Lived
+    Original line:
+                     _burn(target, targetBalance - amount);
+
+    Mutated line:
+                     
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 25
+    Result: Lived
+    Original line:
+                     _mint(target, amount - targetBalance);
+
+    Mutated line:
+                     
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 40
+    Result: Lived
+    Original line:
+                 _transfer(from, to, amount);
+
+    Mutated line:
+                 
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 7
+    Result: Equivalent
+    Original line:
+             constructor(uint256 initialSupply) ERC20("GodMode", "GOD") {
+
+    Mutated line:
+             constructor(uint256 initialSupply)  {
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 13
+    Result: Lived
+    Original line:
+                 onlyOwner
+
+    Mutated line:
+                 
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 20
+    Result: Lived
+    Original line:
+                 onlyOwner
+
+    Mutated line:
+                 
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20GodMode.sol
+    Line nr: 39
+    Result: Lived
+    Original line:
+             ) external onlyOwner {
+
+    Mutated line:
+             ) external  {
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20Sanctions.sol
+    Line nr: 15
+    Result: Lived
+    Original line:
+                 for (uint256 i; i < toAdd.length; i++) {
+
+    Mutated line:
+                 for (uint256 i; i <= toAdd.length; i++) {
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20Sanctions.sol
+    Line nr: 25
+    Result: Lived
+    Original line:
+                 for (uint256 i; i < toRemove.length; i++) {
+
+    Mutated line:
+                 for (uint256 i; i <= toRemove.length; i++) {
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20Sanctions.sol
+    Line nr: 15
+    Result: Lived
+    Original line:
+                 for (uint256 i; i < toAdd.length; i++) {
+
+    Mutated line:
+                 for (uint256 i; i >= toAdd.length; i++) {
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20Sanctions.sol
+    Line nr: 25
+    Result: Lived
+    Original line:
+                 for (uint256 i; i < toRemove.length; i++) {
+
+    Mutated line:
+                 for (uint256 i; i >= toRemove.length; i++) {
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20Sanctions.sol
+    Line nr: 10
+    Result: Lived
+    Original line:
+                 _mint(msg.sender, initialSupply);
+
+    Mutated line:
+                 
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20Sanctions.sol
+    Line nr: 9
+    Result: Equivalent
+    Original line:
+             constructor(uint256 initialSupply) ERC20("Sanctions", "Sanc") {
+
+    Mutated line:
+             constructor(uint256 initialSupply)  {
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20Sanctions.sol
+    Line nr: 13
+    Result: Lived
+    Original line:
+             function addToBlacklist(address[] calldata toAdd) external onlyOwner {
+
+    Mutated line:
+             function addToBlacklist(address[] calldata toAdd) external  {
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20Sanctions.sol
+    Line nr: 22
+    Result: Lived
+    Original line:
+                 onlyOwner
+
+    Mutated line:
+                 
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20TokenSale.sol
+    Line nr: 21
+    Result: Lived
+    Original line:
+                 if (excess != 0) {
+
+    Mutated line:
+                 if (excess == 0) {
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20TokenSale.sol
+    Line nr: 10
+    Result: Equivalent
+    Original line:
+                 ERC20Capped(1_000_000 * 10**18) // All mints capped to 1 mil tokens
+
+    Mutated line:
+                 ERC20Capped(1_000_000 / 10**18) // All mints capped to 1 mil tokens
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20TokenSale.sol
+    Line nr: 18
+    Result: Lived
+    Original line:
+                 uint256 amount = (msg.value / 10**18) * 10**18; // get integer value (Intentionally discarding numbers after decimal point)
+
+    Mutated line:
+                 uint256 amount = (msg.value / 10**18) / 10**18; // get integer value (Intentionally discarding numbers after decimal point)
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20TokenSale.sol
+    Line nr: 18
+    Result: Lived
+    Original line:
+                 uint256 amount = (msg.value / 10**18) * 10**18; // get integer value (Intentionally discarding numbers after decimal point)
+
+    Mutated line:
+                 uint256 amount = (msg.value * 10**18) * 10**18; // get integer value (Intentionally discarding numbers after decimal point)
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20TokenSale.sol
+    Line nr: 19
+    Result: Lived
+    Original line:
+                 _mint(msg.sender, amount * 1000);
+
+    Mutated line:
+                 _mint(msg.sender, amount / 1000);
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20TokenSale.sol
+    Line nr: 12
+    Result: Lived
+    Original line:
+                 _mint(msg.sender, initialSupply);
+
+    Mutated line:
+                 
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20TokenSale.sol
+    Line nr: 19
+    Result: Lived
+    Original line:
+                 _mint(msg.sender, amount * 1000);
+
+    Mutated line:
+                 
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20TokenSale.sol
+    Line nr: 9
+    Result: Equivalent
+    Original line:
+                 ERC20("TokenSale", "TS")
+
+    Mutated line:
+                 
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20TokenSale.sol
+    Line nr: 10
+    Result: Equivalent
+    Original line:
+                 ERC20Capped(1_000_000 * 10**18) // All mints capped to 1 mil tokens
+
+    Mutated line:
+                  // All mints capped to 1 mil tokens
+
+
+Mutation:
+    File: /mnt/c/Users/SS/Github projects/MetanaW1/contracts/ERC20TokenSale.sol
+    Line nr: 26
+    Result: Lived
+    Original line:
+             function withdraw() external payable onlyOwner {
+
+    Mutated line:
+             function withdraw() external payable  {
