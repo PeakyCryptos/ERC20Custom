@@ -6,9 +6,10 @@
 const hre = require("hardhat");
 
 async function main() {
-
   // tokenSaleRefund deploy
-  const tokenSaleRefund = await hre.ethers.getContractFactory("ERC20TokenSaleRefund");
+  const tokenSaleRefund = await hre.ethers.getContractFactory(
+    "ERC20TokenSaleRefund"
+  );
   const TSR = await tokenSaleRefund.deploy();
 
   await TSR.deployed();

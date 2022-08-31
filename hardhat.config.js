@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 require("@nomiclabs/hardhat-etherscan"); // replaced for revert reason error
-//require("@nomiclabs/hardhat-waffle");
+// require("@nomiclabs/hardhat-waffle");
 require("@nomicfoundation/hardhat-chai-matchers");
 require("hardhat-gas-reporter");
 require("solidity-coverage");
