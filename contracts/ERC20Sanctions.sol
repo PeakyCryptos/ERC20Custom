@@ -8,6 +8,7 @@ contract Sanctions is ERC20, Ownable {
     mapping(address => bool) public blacklist;
 
     constructor(uint256 initialSupply) ERC20("Sanctions", "Sanc") {
+        // mint an initial specified amount of tokens to deployer
         _mint(msg.sender, initialSupply);
     }
 
@@ -33,6 +34,8 @@ contract Sanctions is ERC20, Ownable {
         view
         override
     {
+        // hook that is called before ERC20 token transfers
+        // if from or to address is marked true in blacklist mapping call reverts
         require(!blacklist[from], "Recipient or Sender is blacklisted!");
         require(!blacklist[to], "Recipient or Sender is blacklisted!");
     }

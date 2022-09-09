@@ -43,6 +43,7 @@ contract TokenSaleRefund is ERC20Capped, Ownable {
     }
 
     function withdraw() external payable onlyOwner {
+        // Allows deployer to withdraw any residual balance inside contract
         payable(msg.sender).transfer(address(this).balance);
     }
 }

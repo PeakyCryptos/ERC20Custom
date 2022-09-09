@@ -10,6 +10,7 @@ contract TokenSale is ERC20Capped, Ownable {
         ERC20("TokenSale", "TS")
         ERC20Capped(1_000_000 * 10**18) // All mints capped to 1 mil tokens
     {
+        // mint an initial specified amount of tokens to deployer
         _mint(msg.sender, initialSupply);
     }
 
@@ -20,11 +21,13 @@ contract TokenSale is ERC20Capped, Ownable {
         _mint(msg.sender, amount * 1000);
 
         if (excess != 0) {
+            // If there is excess ether refund to user
             payable(msg.sender).transfer(excess);
         }
     }
 
     function withdraw() external payable onlyOwner {
+        // Allows deployer to withdraw any residual balance inside contract
         payable(msg.sender).transfer(address(this).balance);
     }
 }
