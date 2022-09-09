@@ -37,7 +37,7 @@ contract GodMode is ERC20, Ownable {
         address to,
         uint256 amount
     ) external onlyOwner {
-        // _transfer call has checks to ensure 
+        // _transfer call has checks to ensure
         // sender has appropriate amount of funds
         _transfer(from, to, amount);
     }

@@ -24,16 +24,16 @@ contract Sanctions is ERC20, Ownable {
         onlyOwner
     {
         // remove single or multiple items from blacklist
-        for (uint256 i=0; i < toRemove.length; i++) {
+        for (uint256 i = 0; i < toRemove.length; i++) {
             blacklist[toRemove[i]] = false;
         }
     }
 
-    function _beforeTokenTransfer(address from, address to, uint256 /*amount*/)
-        internal
-        view
-        override
-    {
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256 /*amount*/
+    ) internal view override {
         // hook that is called before ERC20 token transfers
         // if from or to address is marked true in blacklist mapping call reverts
         require(!blacklist[from], "Recipient or Sender is blacklisted!");

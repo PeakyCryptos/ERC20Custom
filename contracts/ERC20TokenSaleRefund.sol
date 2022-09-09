@@ -28,13 +28,19 @@ contract TokenSaleRefund is ERC20Capped, Ownable {
 
     function sellBack(uint256 tokens) external payable {
         // check if user has tokens to send
-        require(balanceOf(msg.sender) >= 1, "You do not have any tokens to send!");
+        require(
+            balanceOf(msg.sender) >= 1,
+            "You do not have any tokens to send!"
+        );
 
         // calculate amount of wei to give to sender
-        uint256 amount = (rate * tokens );
+        uint256 amount = (rate * tokens);
 
         // revert if contract doesnt have enough funds
-        require(address(this).balance >= amount, "Contract doesn't have enough Ether!");
+        require(
+            address(this).balance >= amount,
+            "Contract doesn't have enough Ether!"
+        );
 
         // transfer specified token amt to contract
         transfer(address(this), tokens);
