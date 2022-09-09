@@ -23,7 +23,7 @@ contract Sanctions is ERC20, Ownable {
         onlyOwner
     {
         // remove single or multiple items from blacklist
-        for (uint256 i; i < toRemove.length; i++) {
+        for (uint256 i=0; i < toRemove.length; i++) {
             blacklist[toRemove[i]] = false;
         }
     }
