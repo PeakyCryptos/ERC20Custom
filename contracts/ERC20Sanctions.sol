@@ -14,7 +14,7 @@ contract Sanctions is ERC20, Ownable {
 
     function addToBlacklist(address[] calldata toAdd) external onlyOwner {
         // add single or multiple items to blacklist
-        for (uint256 i; i < toAdd.length; i++) {
+        for (uint256 i = 0; i < toAdd.length; i++) {
             blacklist[toAdd[i]] = true;
         }
     }
